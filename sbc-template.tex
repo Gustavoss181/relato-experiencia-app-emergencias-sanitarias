@@ -4,29 +4,26 @@
 
 \usepackage{graphicx,url}
 
-%\usepackage[brazil]{babel}   
-\usepackage[latin1]{inputenc}  
-
+% !TeX encoding = UTF-8
+\usepackage[utf8]{inputenc}
      
 \sloppy
 
-\title{Instructions for Authors of SBC Conferences\\ Papers and Abstracts}
+\title{Engenharia de Software em Cenário Crítico: Relato de Experiência na Implementação
+da Arquitetura Offline-First no Aplicativo Móvel UFLA-IMA para Emergências Sanitárias.}
 
-\author{Luciana P. Nedel\inst{1}, Rafael H. Bordini\inst{2}, Fl�vio Rech
-  Wagner\inst{1}, Jomi F. H�bner\inst{3} }
+\author{
+  Gustavo S. Silva\inst{1}, 
+  Ahmed A. A. Esmin\inst{1}, 
+  Marluce R. Pereira\inst{1}, 
+  Igor E. de Carvalho\inst{1}
+}
 
 
-\address{Instituto de Inform�tica -- Universidade Federal do Rio Grande do Sul
-  (UFRGS)\\
-  Caixa Postal 15.064 -- 91.501-970 -- Porto Alegre -- RS -- Brazil
-\nextinstitute
-  Department of Computer Science -- University of Durham\\
-  Durham, U.K.
-\nextinstitute
-  Departamento de Sistemas e Computa��o\\
-  Universidade Regional de Blumenal (FURB) -- Blumenau, SC -- Brazil
-  \email{\{nedel,flavio\}@inf.ufrgs.br, R.Bordini@durham.ac.uk,
-  jomi@inf.furb.br}
+\address{
+  Departamento de Ciência da Computação -- Universidade Federal de Lavras
+  (UFLA)\\
+  Caixa Postal 15.064 -- 37.200-000 -- Lavras -- MG -- Brazil
 }
 
 \begin{document} 
@@ -42,29 +39,36 @@
 \end{abstract}
      
 \begin{resumo} 
-  Este meta-artigo descreve o estilo a ser usado na confec��o de artigos e
-  resumos de artigos para publica��o nos anais das confer�ncias organizadas
-  pela SBC. � solicitada a escrita de resumo e abstract apenas para os artigos
-  escritos em portugu�s. Artigos em ingl�s dever�o apresentar apenas abstract.
+  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
+  resumos de artigos para publicação nos anais das conferências organizadas
+  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
+  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
   Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-  n�o ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-  p�gina do artigo.
+  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
+  página do artigo.
 \end{resumo}
 
 
-\section{General Information}
+\section{Introdução}
 
-All full papers and posters (short papers) submitted to some SBC conference,
-including any supporting documents, should be written in English or in
-Portuguese. The format paper should be A4 with single column, 3.5 cm for upper
-margin, 2.5 cm for bottom margin and 3.0 cm for lateral margins, without
-headers or footers. The main font must be Times, 12 point nominal size, with 6
-points of space before each paragraph. Page numbers must be suppressed.
+A aplicação de boas práticas de Engenharia de Software é fundamental para assegurar a qualidade, 
+manutenibilidade e sustentabilidade de sistemas computacionais. Em contextos governamentais, como 
+o da vigilância sanitária agropecuária, onde a confiabilidade e a longevidade dos sistemas são 
+requisitos críticos, tais práticas tornam-se ainda mais relevantes. O desafio se intensifica no 
+desenvolvimento de Sistemas de Informação Móveis (SIMs), que devem garantir a coleta de dados em 
+campo de forma eficaz, muitas vezes em ambientes com conectividade de rede limitada ou inexistente.
 
-Full papers must respect the page limits defined by the conference.
-Conferences that publish just abstracts ask for \textbf{one}-page texts.
+Este trabalho, portanto, apresenta um relato de experiência sobre o desenvolvimento e implementação do aplicativo móvel de Suporte a Emergências Sanitárias, fruto da parceria entre a Universidade Federal de Lavras (UFLA) e o Instituto Mineiro de Agropecuária (IMA). Com foco na aplicação de princípios de engenharia em um cenário de alta restrição, o projeto foi marcado por um prazo crítico de desenvolvimento (três meses) e pela exigência técnica fundamental de uma arquitetura Offline-First.
 
-\section{First Page} \label{sec:firstpage}
+O relato detalha como a metodologia ágil (Scrum) foi adotada para gerenciar o projeto e permitir entregas funcionais sob pressão. Descreve-se a validação do aplicativo em um Simulado de Emergência Sanitária, que serviu como prova de conceito e permitiu a correção rápida de funcionalidades.
+
+Na sequência, detalham-se as diretrizes de engenharia aplicadas ao desenvolvimento móvel. Aborda-se a escolha da Clean Architecture (Arquitetura Limpa) como estratégia para gerenciar a complexidade, desacoplar componentes e facilitar a manutenção. O núcleo técnico do relato foca nos desafios de implementação do fluxo Offline-First, incluindo a estratégia de persistência local, a integração com um backend existente e o mecanismo de sincronização de dados.
+
+Por fim, o trabalho analisa os aprendizados obtidos, com foco principal no balanço entre a arquitetura de software ideal e o pragmatismo exigido pela restrição de tempo. Sistematizam-se as boas práticas de colaboração e gestão de versão (Git) e discute-se como a Tríplice Restrição (Escopo, Tempo e Custo) foi gerenciada para preservar a qualidade da entrega.
+
+O restante deste Relato de Experiência está organizado como a seguir. A Seção 2 (Referencial Teórico) apresenta os conceitos fundamentais que embasam o projeto, como Metodologias Ágeis (Scrum) e os princípios da Clean Architecture. A Seção 3 (Contexto da Experiência e Metodologia) descreve o ambiente do projeto, a parceria UFLA-IMA e a aplicação prática do Scrum. A Seção 4 (Arquitetura Mobile e Desafios Técnicos) apresenta e justifica as decisões de engenharia, com foco na arquitetura Offline-First e na adaptação ao backend. A Seção 5 (Análise, Resultados e Aprendizados) discute os trade-offs entre pragmatismo e qualidade de código. Por fim, a Seção 6 (Considerações Finais) sistematiza as conclusões, contribuições e aprendizados do trabalho.
+
+\section{Referencial Teórico} \label{sec:firstpage}
 
 The first page must display the paper title, the name and address of the
 authors, the abstract in English and ``resumo'' in Portuguese (``resumos'' are
@@ -81,7 +85,7 @@ The abstract and ``resumo'' (if is the case) must be in 12 point Times font,
 indented 0.8cm on both sides. The word \textbf{Abstract} and \textbf{Resumo},
 should be written in boldface and must precede the text.
 
-\section{CD-ROMs and Printed Proceedings}
+\section{Contexto da Experiência e Metodologia}
 
 In some conferences, the papers are published on CD-ROM while only the
 abstract is published in the printed Proceedings. In this case, authors are
@@ -89,16 +93,28 @@ invited to prepare two final versions of the paper. One, complete, to be
 published on the CD and the other, containing only the first page, with
 abstract and ``resumo'' (for papers in Portuguese).
 
-\section{Sections and Paragraphs}
+\section{Arquitetura Mobile e Desafios Técnicos}
 
 Section titles must be in boldface, 13pt, flush left. There should be an extra
 12 pt of space before each title. Section numbering is optional. The first
 paragraph of each section should not be indented, while the first lines of
 subsequent paragraphs should be indented by 1.27 cm.
 
-\subsection{Subsections}
+\subsection{Clean Architecture}
 
 The subsection titles must be in boldface, 12pt, flush left.
+
+\subsection{Offline-First}
+
+Placeholder for Offline-First content.
+
+\subsection{Desafios}
+
+Placeholder for Desafios content.
+
+\section{Análise, Resultados e Aprendizados}
+
+Placeholder for Análise, Resultados e Aprendizados content.
 
 \section{Figures and Captions}\label{sec:figs}
 
