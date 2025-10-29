@@ -1,0 +1,26 @@
+# Arquivos de log e auxiliares do LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex
+
+# Arquivo PDF gerado
+# (Algumas pessoas gostam de versionar o PDF, eu prefiro não)
+# Se quiser versionar o PDF, comente a linha abaixo.
+*.pdf
+
+# Arquivos do editor (VSCode)
+.vscode/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
